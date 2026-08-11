@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b0whrg7rifcim"]
+
+[ext_resource type="Texture2D" uid="uid://df1s24yh1eag3" path="res://Tiny Swords (Free Pack)/UI Elements/UI Elements/Buttons/SmallBlueRoundButton_Regular.png" id="1_usgjc"]
+[ext_resource type="Script" uid="uid://bpqge7yc3qtmk" path="res://button.gd" id="2_qammi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a66s2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usgjc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qammi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control" unique_id=717334962]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 15.0
+offset_right = 7.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=439081766]
+layout_mode = 0
+offset_left = 849.0
+offset_top = 366.0
+offset_right = 977.0
+offset_bottom = 494.0
+pivot_offset = Vector2(-367, -2276)
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_a66s2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_usgjc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qammi")
+icon = ExtResource("1_usgjc")
+icon_alignment = 1
+script = ExtResource("2_qammi")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]
