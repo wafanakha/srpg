@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d15lgmpu8dc4u" path="res://Tiny Swords (Free Pack)/Terrain/Tileset/Shadow.png" id="1_y3o0k"]
 [ext_resource type="Script" uid="uid://eq7vv4t0yuy5" path="res://scripts/grid_pathing.gd" id="1_ywepn"]
+[ext_resource type="PackedScene" uid="uid://b0whrg7rifcim" path="res://battleUI.tscn" id="2_737ms"]
 [ext_resource type="Texture2D" uid="uid://47lrtaake3e8" path="res://Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color1.png" id="2_dl1se"]
 [ext_resource type="Texture2D" uid="uid://plr7xrxpg2an" path="res://Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color2.png" id="3_w43fq"]
 [ext_resource type="Texture2D" uid="uid://gtedypakvtpu" path="res://Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color3.png" id="4_no60x"]
@@ -12,10 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://dg14f8xofelj" path="res://Tiny Swords (Free Pack)/Terrain/Tileset/Water Foam.png" id="8_g8v7j"]
 [ext_resource type="Texture2D" uid="uid://1yci1eri0lln" path="res://Tiny Swords (Free Pack)/Units/Blue Units/Warrior/Warrior_Idle.png" id="10_dl1se"]
 [ext_resource type="Texture2D" uid="uid://c524l827sk52x" path="res://Tiny Swords (Free Pack)/Units/Blue Units/Warrior/Warrior_Attack1.png" id="10_rhn0t"]
-[ext_resource type="Texture2D" uid="uid://b5wpybueps3hv" path="res://Tiny Swords (Free Pack)/highliths/highlight.png" id="11_mj4ub"]
+[ext_resource type="Texture2D" uid="uid://cn6g3556c6h0d" path="res://Tiny Swords (Free Pack)/highliths/move_highlight.png" id="11_0iv8s"]
 [ext_resource type="Texture2D" uid="uid://7firel2qpx60" path="res://Tiny Swords (Free Pack)/Units/Blue Units/Warrior/Warrior_Attack2.png" id="11_ywepn"]
 [ext_resource type="Texture2D" uid="uid://dsf74vgml8bjb" path="res://Tiny Swords (Free Pack)/Units/Blue Units/Warrior/Warrior_Guard.png" id="12_84qtw"]
-[ext_resource type="Texture2D" uid="uid://b8wbc3bv8ymek" path="res://Tiny Swords (Free Pack)/highliths/white_highlight.png" id="12_puvbh"]
+[ext_resource type="Texture2D" uid="uid://cgq04ajvfstft" path="res://Tiny Swords (Free Pack)/highliths/attack_highlight.png" id="12_737ms"]
 [ext_resource type="Texture2D" uid="uid://c1ua31f24das7" path="res://Tiny Swords (Free Pack)/Units/Blue Units/Warrior/Warrior_Run.png" id="15_84qtw"]
 [ext_resource type="Script" uid="uid://bj8bdrg0lv18d" path="res://scripts/unit.gd" id="16_g8v7j"]
 [ext_resource type="Texture2D" uid="uid://cdabpv441glg1" path="res://Tiny Swords (Free Pack)/Units/Red Units/Lancer/Lancer_Right_Attack.png" id="19_0iv8s"]
@@ -810,19 +811,19 @@ sources/8 = SubResource("TileSetAtlasSource_0iv8s")
 sources/9 = SubResource("TileSetAtlasSource_737ms")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_84y7q"]
-texture = ExtResource("11_mj4ub")
+texture = ExtResource("11_0iv8s")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52xid"]
-texture = ExtResource("12_puvbh")
+texture = ExtResource("12_737ms")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_37lo5"]
 tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_84y7q")
-sources/1 = SubResource("TileSetAtlasSource_52xid")
+sources/2 = SubResource("TileSetAtlasSource_84y7q")
+sources/3 = SubResource("TileSetAtlasSource_52xid")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okydr"]
 atlas = ExtResource("10_rhn0t")
@@ -1245,7 +1246,7 @@ tile_map_data = PackedByteArray("AAAFAAYABgADAAQAAAAFAAcABgADAAUAAAAEAAcABgAGAAQ
 tile_set = SubResource("TileSet_y3o0k")
 
 [node name="highlight" type="TileMapLayer" parent="." unique_id=1366947278]
-modulate = Color(0.37254903, 0.70980394, 0.8, 0.40392157)
+modulate = Color(1, 1, 1, 0.33333334)
 tile_set = SubResource("TileSet_37lo5")
 
 [node name="warrior" type="AnimatedSprite2D" parent="." unique_id=257274375]
@@ -1263,4 +1264,4 @@ mov_range = 3
 attack = 6
 attack_range = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1557035060]
+[node name="Control" parent="." unique_id=717334962 instance=ExtResource("2_737ms")]
