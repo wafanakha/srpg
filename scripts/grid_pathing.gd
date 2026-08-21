@@ -38,7 +38,7 @@ func _ready():
 	astar_grid.set_point_solid(l_pos, true)
 	
 	current_unit = warrior
-	draw_movement_range()
+	#draw_movement_range()
 
 
 func _unhandled_input(event):
@@ -51,7 +51,7 @@ func _unhandled_input(event):
 		var enemies = lancer if current_unit == warrior else warrior
 		var enemies_pos = tilemap.local_to_map(enemies.global_position)
 		
-		var full_attack_range = current_unit.mov_range + current_unit.attack_range
+		#var full_attack_range = current_unit.mov_range + current_unit.attack_range
 		var attack_range = current_unit.attack_range
 		
 		# CEK ATK
@@ -68,7 +68,7 @@ func _unhandled_input(event):
 				await current_unit.animation_finished
 				current_unit.play("idle")
 				
-				change_unit()
+				#change_unit()
 				
 			else:
 				print("too far to attack")
@@ -88,12 +88,12 @@ func _unhandled_input(event):
 			print("no!")
 			astar_grid.set_point_solid(current_unit_grid_pos, true) 
 			
-		elif (path.size() - 1) > current_unit.mov_range:
-			print("too far")
-			astar_grid.set_point_solid(current_unit_grid_pos, true) 
-		elif is_moved:
-			print("was moved")
-			astar_grid.set_point_solid(current_unit_grid_pos, true) 
+		#elif (path.size() - 1) > current_unit.mov_range:
+			#print("too far")
+			#astar_grid.set_point_solid(current_unit_grid_pos, true) 
+		#elif is_moved:
+			#print("was moved")
+			#astar_grid.set_point_solid(current_unit_grid_pos, true) 
 			
 		else:
 			path.pop_front()
@@ -116,7 +116,7 @@ func _unhandled_input(event):
 			current_unit.play("idle")
 			
 			is_moved = !is_moved
-			draw_movement_range()
+			#draw_movement_range()
 
 			
 func draw_movement_range():
