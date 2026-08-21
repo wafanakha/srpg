@@ -52,12 +52,13 @@ func _unhandled_input(event):
 		var enemies_pos = tilemap.local_to_map(enemies.global_position)
 		
 		var full_attack_range = current_unit.mov_range + current_unit.attack_range
+		var attack_range = current_unit.attack_range
 		
 		# CEK ATK
 		if target_grid_pos == enemies_pos:
 			var distance = abs(current_unit_grid_pos.x - target_grid_pos.x) + abs(current_unit_grid_pos.y - target_grid_pos.y)
 			
-			if distance <= full_attack_range:
+			if distance <= attack_range:
 				if target_grid_pos.x > current_unit_grid_pos.x :
 					current_unit.flip_h = false
 				elif target_grid_pos.x < current_unit_grid_pos.x :
