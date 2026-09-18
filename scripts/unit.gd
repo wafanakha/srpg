@@ -1,5 +1,6 @@
 extends AnimatedSprite2D
 
+@export var health = 100
 @export var attack = 5
 @export var attack_range = 1
 @export var defense = 5
